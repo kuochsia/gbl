@@ -105,7 +105,6 @@
             -webkit-backdrop-filter: blur(6px)!important;
             backdrop-filter: blur(6px)!important;
             pointer-events:auto;
-            mix-blend-mode: difference;
             }
         .nav-item {
             font-family: "Lora", serif;
@@ -116,6 +115,8 @@
             padding: 5px 10px;
             transition: color 0.3s ease, transform 0.3s ease;
             position: relative;
+            mix-blend-mode: difference;
+            
         }
 
         .nav-item::after {
@@ -128,6 +129,8 @@
             background-color: #aaa;
             transform: scaleX(0);
             transition: transform 0.3s ease;
+            mix-blend-mode: difference;
+            
         }
 
         .nav-item:hover {
