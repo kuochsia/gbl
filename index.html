@@ -211,13 +211,22 @@
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12); /* Subtle hover shadow */
         }
 
-        .card img {
+        .imgdefault {
             width: 100%;
             height: 250px;
             object-fit:cover;
             border-top-left-radius: 18px; /* Match card border-radius */
             border-top-right-radius: 18px; /* Match card border-radius */
         }
+
+        .livre {
+            width: 100%;
+            height: 250px;
+            object-fit:cover;
+            border-top-left-radius: 18px; /* Match card border-radius */
+            border-top-right-radius: 18px; /* Match card border-radius */
+        }
+
 
         .card h3 {
             padding: 20px;
@@ -242,7 +251,7 @@
             padding: 5px 5px;
             border-radius: 5px;
             text-decoration: none;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
             transition: background-color 0.3s ease, transform 0.3s ease;
             font-weight: bold;
             font-size: 0.95em;
@@ -253,6 +262,28 @@
             background-color: #333;
             transform: translateY(-3px);
         }
+
+        /* Conteneur des boutons */
+        .button-group {
+        display: flex;
+        justify-content: center;
+        gap: 10px;           /* espace entre les boutons */
+        flex-wrap: wrap;     /* permet de passer sur plusieurs lignes si l’écran est petit */
+        margin-top: auto;    /* optionnel : pousse les boutons vers le bas */
+        }
+        /* Style des boutons */
+        .button-group .button {
+        background-color: #555;
+        color: #fff;
+        padding: 8px 14px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 0.95em;
+        letter-spacing: 0.5px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
 
         /* Swiper Navigation */
         .swiper-button-next, .swiper-button-prev {
@@ -397,37 +428,57 @@
                         <!-- 7 éléments pour la section Formatrice -->
                         <div class="swiper-slide">
                             <div class="card">
-                                <img src="f00.jpg" alt="Art du récit">
-                                <h3>L'ART de CONTER</h3>
-                                <p>durée : une à deux journées
-                                nombre de participants : entre 6 et 12
-                                déroulement : présentation générale du conte, genres, classification.
-                                des informations : bibliographie, lieux qui content
-                                des exercices sensoriels : Le conteur est essentiellement témoin d’images, de sensations qu’il « passe » à son auditoire.
-
-                                Voir, entendre, sentir, toucher, goûter. Nos cinq sens nous relient au monde et donnent du sens à nos récits... Le conte se pare alors de couleurs, d’odeurs, les mots sont véritablement incarnés, animés, l’objectif étant que chacun puisse conter sa propre version du conte et l’histoire peut commencer !</p>
+                                <img src="f04.jpg" alt="CONFERENCE CONTEE" class="imgdefault">
+                                <h3>CONFERENCE CONTEE</h3>
+                                <p>2h pour découvrir le conte et l’art de conter</p>
                             </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <img src="f00.jpg" alt="Le CHEMIN des AIGUILLES"  class="imgdefault">
+                                <h3>Le CHEMIN des AIGUILLES</h3>
+                                <p>Pour commencer il y a le temps du conte, au fil de la parole, 
+                                Puis vient le temps de la broderie, on prépare les bobines, les aiguilles, le fil et en route. 
+                                et on repart avec sa bobine de mots.
+
+                                Les mains cousent embellissent, jouent, réparent… elles cheminent sur un fil sans jamais tomber, traversent des champs de fleurs, avancent dans le flou, se faufilent dans les plis…
+                                durée : 2h
+</p>
+                               </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="card">
-                                <img src="f01.jpg" alt="JUSTE CONTER ou CONTER JUSTE">
+                                <img src="f01.jpg" alt="JUSTE CONTER ou CONTER JUSTE" class="imgdefault">
                                 <h3>JUSTE CONTER ou<br>CONTER JUSTE</h3>
-                                <p>pour que le conte sonne juste.
+                                <p>pour que le conte sonne juste.<br>
 
 public : tous ceux qui désirent découvrir l’univers des contes et pratiquer l’art de conter</p>
                             </div>
                         </div>
+
                         <div class="swiper-slide">
                             <div class="card">
-                                <img src="f02.jpg" alt="CONTER DES RANDONNEES">
-                                <h3>CONTER DES RANDONNEES</h3>
-                                <p>La randonnée (ou récit énumératif) peut être contée ou chantée.
-Elle nous propose un chemin" pour aller à la découverte du monde. 1-2-3 on y va ! On chante, on rit, on joue avec tout : les gens, les difficultés à résoudre, les catastrophes. On compare, on échange, on gagne et on perd, on revient ou pas ! mais rien n’est grave.</p>
+                                <img src="f05.jpg" alt="123conter" class="imgdefault">
+                                <h3>1 2 3 : CONTER !</h3>
+                                <p>atelier découverte<br>
+                                1 - découvrir l’univers du conte, les collectes, les différents genres.<br>
+                                2 - écouter un conte et le conter ensemble<br>
+                                3 - passer un bon moment au milieu des histoires<br>
+                                pour une durée de 2h et jusqu’à 20 personnes</p>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="card">
-                                <img src="f03.jpg" alt="CONTER aux TOUT- PETiTS">
+                                <img src="f02.jpg" alt="CONTER DES RANDONNEES" class="imgdefault">
+                                <h3>CONTER DES RANDONNEES</h3>
+                                <p>La randonnée (ou récit énumératif) peut être contée ou chantée.
+Elle nous propose un chemin pour aller à la découverte du monde. On chante, on rit, on joue avec tout : les gens, les difficultés à résoudre, les catastrophes. On compare, on échange, on gagne et on perd, on revient ou pas ! mais rien n’est grave.</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <img src="f03.jpg" alt="CONTER aux TOUT- PETiTS" class="imgdefault">
                                 <h3>CONTER aux TOUT- PETiTS</h3>
                                 <p>comptines, jeux de doigts, contes.
                                     Que serait notre peur sans le loup ?
@@ -437,55 +488,59 @@ Elle nous propose un chemin" pour aller à la découverte du monde. 1-2-3 on y v
                                 </p>
                             </div>
                         </div>
-                        <div class="swiper-slide">
-                            <div class="card">
-                                <img src="f04.jpg" alt="CONFERENCE CONTEE">
-                                <h3>CONFERENCE CONTEE</h3>
-                                <p>2h pour découvrir le conte et l’art de conter</p>
-                            </div>
-                        </div>
+                       
                        
                     </div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-pagination"></div>
                 </div>
+                    <p class="intro-text"><br>Atelier d'une à deux journées<br>
+                    entre 6 et 12 participants<br>
+                    <b>déroulé</b> : présentation générale du conte, genres, classification.<br>
+                    <b>informations</b> : bibliographie, lieux qui content<br>
+                    <b>des exercices sensoriels</b> : Le conteur est essentiellement témoin d’images, de sensations qu’il « passe » à son auditoire.</div>
+                    <p class="intro-text">
+                                Voir, entendre, sentir, toucher, goûter. Nos cinq sens nous relient au monde et donnent du sens à nos récits... Le conte se pare alors de couleurs, d’odeurs, les mots sont véritablement incarnés, animés, l’objectif étant que chacun puisse conter sa propre version du conte et <b>l’histoire peut commencer !</b></p>
             </div>
         </section>
 
         <section id="autrice" class="section">
             <div class="container">
-                <h2>Les livres</h2>
-                <p class="intro-text">
-                    Au-delà de la voix, Geneviève Bayle-Labouré a également posé ses mots sur le papier. Chaque livre est une invitation à l'évasion.
-                </p>
+                <h2>les livres</h2>
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
                         <!-- 3 éléments pour la section Autrice -->
                         <div class="swiper-slide">
                             <div class="card">
-                                <img src="l01.webp" alt="le souci de la souris" >
+                                <img src="l01.jpg" alt="Le soucis de la souris">
                                 <h3>le souci de la souris</h3>
-                                <p>Geneviève Bayle-Labouré
+                                <p>Geneviève Bayle-Labouré & 
                                 Sabine Richard
                                 Illustrations : Tullio Corda</p>
+                            <div class="button-group">
+                                <a href="https://www.mondoral.org/site/sabine-richard/" class="button">Sabine Richard</a>
+                                <a href="https://www.instagram.com/tulliocorda/" class="button">Tullio Corda</a>
                                 <a href="https://www.lirabelle.fr/produit/souci-de-la-souris-le/" class="button">édition Lirabelle</a>
+                            </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="card">
-                                <img src="l02.jpg" alt="trait bleu" >
+                                <img src="l02.jpg" alt="trait bleu">
                                 <h3>trait bleu</h3>
                                 <p>Geneviève Bayle-Labouré
                                     texte et photos
 
                                     Marie Gorlicki
                                     illustration et conception graphique</p>
+
+                                <a href="https://www.instagram.com/marie_laboulangerie/" class="button">Marie Gorliki</a>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="card">
-                                <img src="l03.jpg" alt="la hulotte" >
+                                <img src="l03.jpg" alt="la hulotte">
                                 <h3>la hulotte</h3>
                                 <p>revue n°115
                                     photo couverture</p>
@@ -515,7 +570,7 @@ Elle nous propose un chemin" pour aller à la découverte du monde. 1-2-3 on y v
                         <!-- 10 éléments pour la section Conteuse -->
                         <div class="swiper-slide">
                             <div class="card">
-                                <img src="00.jpg" alt="par tous les saints !">
+                                <img src="00.jpg" alt="par tous les saints !" class="imgdefault">
                                 <h3>par tous les saints !</h3>
                                 <p>causeries<br>
                                     sur les traces du légendaire médiéval
@@ -525,7 +580,7 @@ Elle nous propose un chemin" pour aller à la découverte du monde. 1-2-3 on y v
                         </div>
                         <div class="swiper-slide">
                             <div class="card">
-                                <img src="01.jpg" alt="Histoire telle qu'elles">
+                                <img src="01.jpg" alt="Histoire telle qu'elles" class="imgdefault">
                                 <h3>Histoire telle qu'elles</h3>
                                 <p>Madeleine, Hortense, Marguerite, Marinette, Yamira
                                     et celles dont on a oublié le nom.
@@ -535,14 +590,14 @@ Elle nous propose un chemin" pour aller à la découverte du monde. 1-2-3 on y v
                         </div>
                         <div class="swiper-slide">
                             <div class="card">
-                                <img src="02.jpg" alt="chocotte et rigolade">
+                                <img src="02.jpg" alt="chocotte et rigolade" class="imgdefault">
                                 <h3>chocotte et rigolade</h3>
                                 <p>Quand on ne cause pas le jour on s’ennuie Quand on ne cause pas la nuit on a peur</p>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="card">
-                                <img src="03.jpg" alt="un pâté de maisons">
+                                <img src="03.jpg" alt="un pâté de maisons" class="imgdefault">
                                 <h3>un pâté de maisons</h3>
                                 <p>Toc toc ouvrez-moi la porte
                                     Tirez le verrou
@@ -551,7 +606,7 @@ Elle nous propose un chemin" pour aller à la découverte du monde. 1-2-3 on y v
                         </div>
                         <div class="swiper-slide">
                             <div class="card">
-                                <img src="04.jpg" alt="côté fenêtre">
+                                <img src="04.jpg" alt="côté fenêtre" class="imgdefault">
                                 <h3>côté fenêtre</h3>
                                 <p>Un voyage en train autour du monde
 pour écouter les pays traversés.</p>
@@ -559,21 +614,21 @@ pour écouter les pays traversés.</p>
                         </div>
                         <div class="swiper-slide">
                             <div class="card">
-                                <img src="05.jpg" alt="des contes venus du froid à écouter au chaud">
+                                <img src="05.jpg" alt="des contes venus du froid à écouter au chaud" class="imgdefault">
                                 <h3>des contes venus du froid<br>à écouter au chaud</h3>
                                 <p></p>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="card">
-                                <img src="06.jpg" alt="Monsieur de la Fontaine, s’il vous plait !">
+                                <img src="06.jpg" alt="Monsieur de la Fontaine, s’il vous plait !" class="imgdefault">
                                 <h3>Monsieur de la Fontaine, s’il vous plait !</h3>
                                 <p>fables contées</p>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="card">
-                                <img src="07.jpg" alt="jardins">
+                                <img src="07.jpg" alt="jardins" class="imgdefault">
                                 <h3>jardins</h3>
                                 <p>des contes cultivés et récoltés,
 de toutes les couleurs de toutes les senteurs
@@ -582,7 +637,7 @@ contes, farces et nouvelles du jardin.</p>
                         </div>
                         <div class="swiper-slide">
                             <div class="card">
-                                <img src="08.jpg" alt="Y’a du bazar dans mon sac">
+                                <img src="08.jpg" alt="Y’a du bazar dans mon sac" class="imgdefault">
                                 <h3>Y’a du bazar dans mon sac</h3>
                                 <p>des p’tits bouts d’histoires
 pour les p’tits bouts</p>
@@ -590,7 +645,7 @@ pour les p’tits bouts</p>
                         </div>
                         <div class="swiper-slide">
                             <div class="card">
-                                <img src="09.jpg" alt="Merveilles, Menteries et Facéties">
+                                <img src="09.jpg" alt="Merveilles, Menteries et Facéties" class="imgdefault">
                                 <h3>Merveilles, Menteries et Facéties</h3>
                                 <p>en duo avec Sabine Richard</p>
                             </div>
