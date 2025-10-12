@@ -124,7 +124,7 @@
             text-decoration: none;
             font-size: 1.0em;
             font-weight: 200;
-            padding: 5px 10px;
+            padding: 5px 0px;
             transition: color 0.3s ease, transform 0.3s ease;
             position: relative;
             
@@ -170,8 +170,8 @@
         .hero-content{
             position:relative; z-index:2; text-align:center; max-width:1000px;;
         }
-        .hero-content h1{  font-size:48px; margin-bottom:4px }
-        .hero-content p{ color: #f4f4f4; font-size:18px; max-width:820px; margin-bottom: 20%; }
+        .hero-content h1{  font-size:48px; margin-bottom:4px;padding-left: 20px;padding-right: 20px;}
+        .hero-content p{ color: #f4f4f4; font-size:18px; max-width:820px; margin-bottom: 15%; padding-left: 20px;padding-right: 20px;}
 
 
         /* Sections */
@@ -409,6 +409,88 @@
             }
             
         }
+
+        #avatar-genevieve {
+            position: fixed;
+            bottom: 10%;
+            left: -200px;
+            width: 120px;
+            height: auto;
+            opacity: 1;
+            z-index: 999;
+            transition:
+                opacity 1.2s ease,
+                transform 1.2s ease,
+                left 1s ease,
+                right 1s ease;
+            pointer-events: none;
+        }
+
+        #avatar-genevieve.show-left {
+            opacity: 1;
+            left: 40px;
+            right: auto;
+            transform: translateY(0);
+        }
+
+        #avatar-genevieve.show-right {
+            opacity: 1;
+            right: 40px;
+            left: auto;
+            transform: translateY(0);
+        }
+
+        @keyframes floaty {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+            }
+            #avatar-genevieve.show-left,
+            #avatar-genevieve.show-right {
+            animation: floaty 4s ease-in-out infinite;
+        }    
+        /* === Bouton scroll-to-top === */
+        #scrollTopBtn {
+        position: fixed;
+        bottom: 40px;
+        right: 40px;
+        width: 54px;
+        height: 54px;
+        border: none;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        cursor: pointer;
+        z-index: 1000;
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.4s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(8px);
+        }
+
+        #scrollTopBtn svg {
+        width: 26px;
+        height: 26px;
+        pointer-events: none;
+        }
+
+        #scrollTopBtn.show {
+        opacity: 1;
+        transform: translateY(0);
+        }
+
+        /* Changement de style sur fond clair */
+        body.light-section #scrollTopBtn {
+        background: rgba(255, 255, 255, 0.85);
+        color: #000;
+        }
+
+        #scrollTopBtn:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
     </style>
 </head>
 <body>
@@ -420,18 +502,20 @@
             <a href="#formatrice" class="nav-item">Formatrice</a>
             <a href="#autrice" class="nav-item">Auteure</a>
             <a href="#conteuse" class="nav-item">Conteuse</a>
-        </div>
+            <a href="#liens" class="nav-item">Liens</a>
+           </div>
     </nav>
 
     <header id="accueil" class="hero-section">
         <div class="hero-content">
             <h1>Geneviève Bayle-Labouré</h1>
-            <p>le conte est chemin, mille fois parcouru par mille passants et pourtant neuf à chaque fois</p>
+            <p>le conte est chemin, mille fois parcouru par mille passants et pourtant neuf à chaque fois </p>
         </div>
     </header>
 
     <main>
- 
+        <!-- Avatar flottant -->
+       
 
         <section id="formatrice" class="section even-section">
             <div class="container">
@@ -663,7 +747,7 @@ pour les p’tits bouts</p>
                 </div>
             </div>
         </section>
-        <section id="autrice" class="section">
+        <section id="liens" class="section">
                 <div class="container">
                     <h2>quelques liens</h2>
                     <div class="swiper mySwiper">
@@ -672,7 +756,7 @@ pour les p’tits bouts</p>
                             <div class="swiper-slide">
                                 <div class="card">
                                     <img src="interview.png" alt="Le soucis de la souris">
-                                    <h3>interview</h3>
+                                    <h3>entretien</h3>
                                     <p>Être conteur aujourd'hui:<br> 05 Geneviève Bayle-Labouré.</p>
                                     <a href="https://www.youtube.com/watch?v=Dr5Y9ksds8Q" class="button">youtube</a>
                                 </div>
@@ -689,8 +773,8 @@ pour les p’tits bouts</p>
                              <div class="swiper-slide">
                                 <div class="card">
                                     <img src="contact.jpg" alt="trait bleu">
-                                    <h3>contactez moi</h3>
-                                    <p>N'hésitez pas à me contacter par un email si une formation ou un conte vous intéresse.</p>
+                                    <h3>pour me contacter</h3>
+                                    <p></p>
 
                                     <a href="mailto:genevieve.bl@gmail.com" class="button">eMail</a>
                                 </div>
@@ -703,11 +787,16 @@ pour les p’tits bouts</p>
                     </div>
                 </div>
             </section>
-
-
     </main>
-
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+      <img id="avatar-genevieve" src="" alt="Avatar Geneviève"/>
+    <!-- === Bouton de retour en haut === -->
+    <button id="scrollTopBtn" aria-label="Remonter en haut">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="2" fill="none"/>
+        <path d="M8 13l4-4 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    </button>
+      <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Smooth scrolling for navigation links
@@ -784,18 +873,90 @@ pour les p’tits bouts</p>
                 });
             });
         });
-        // Animation d'apparition au scroll
+        
+
+        
+        const avatar = document.getElementById('avatar-genevieve');
+        const sections = document.querySelectorAll('section');
+        let lastIndex = -1;
+
+        // Associe chaque section à son avatar spécifique
+        const avatars = {
+            accueil: 'avatar1.png',
+            formatrice: 'avatar1.png',
+            auteure: 'avatar1.png',
+            conteuse: 'avatar1.png'
+        };
+
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = 1;
-                entry.target.style.transform = "translateY(0)";
+            const id = entry.target.id;
+            if (entry.isIntersecting && id !== 'accueil') {
+                console.log("HERE");
+                const index = [...sections].indexOf(entry.target);
+                const side = index % 2 === 0 ? 'left' : 'right';
+
+                // Mise à jour de l'image selon la section
+                if (avatars[id]) {
+                    avatar.src = avatars[id];
+                }
+
+                // Transition fluide
+                avatar.classList.remove('show-left', 'show-right');
+                setTimeout(() => avatar.classList.add(`show-${side}`), 100);
+
+                lastIndex = index;
+            } else if (entry.target.id !== 'accueil' && entry.target === sections[lastIndex]) {
+                avatar.classList.remove('show-left', 'show-right');
             }
             });
-        }, { threshold: 0.2 });
+        }, { threshold: 0.5 });
 
-        document.querySelectorAll('.masonry img').forEach(img => observer.observe(img));
-        
+        sections.forEach(sec => observer.observe(sec));
+        document.addEventListener('DOMContentLoaded', () => {
+            const avatar = document.getElementById('avatar-genevieve');
+            if (!avatar) return;
+
+            // --- CONFIGURATION ---
+            const MOVE_RANGE = 120; // amplitude verticale du mouvement (en px)
+            const SMOOTHNESS = 0.08; // vitesse d’interpolation (0.05 à 0.2 = lent à rapide)
+            let targetY = 0, currentY = 0;
+
+            // fonction appelée à chaque frame pour un défilement fluide
+            function updatePosition() {
+                currentY += (targetY - currentY) * SMOOTHNESS;
+                avatar.style.transform = `translateY(${currentY}px)`;
+                requestAnimationFrame(updatePosition);
+            }
+
+            // mise à jour de la position souhaitée selon le scroll
+            window.addEventListener('scroll', () => {
+                const scrollProgress = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+                targetY = (scrollProgress - 0.5) * MOVE_RANGE * 2; 
+            });
+
+            // lance l’animation
+            requestAnimationFrame(updatePosition);
+        });
+    document.addEventListener('DOMContentLoaded', () => {
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+    // Affiche / cache le bouton selon la position du scroll
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > window.innerHeight * 0.8) {
+        scrollTopBtn.classList.add('show');
+        } else {
+        scrollTopBtn.classList.remove('show');
+        }
+    });
+
+    // Animation retour en haut
+    scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    });
     </script>
+    <!-- === Bouton de retour en haut === -->
+
 </body>
 </html>
