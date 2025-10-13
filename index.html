@@ -410,44 +410,7 @@
             
         }
 
-        #avatar-genevieve {
-            position: fixed;
-            bottom: 10%;
-            left: -200px;
-            width: 120px;
-            height: auto;
-            opacity: 1;
-            z-index: 999;
-            transition:
-                opacity 1.2s ease,
-                transform 1.2s ease,
-                left 1s ease,
-                right 1s ease;
-            pointer-events: none;
-        }
-
-        #avatar-genevieve.show-left {
-            opacity: 1;
-            left: 40px;
-            right: auto;
-            transform: translateY(0);
-        }
-
-        #avatar-genevieve.show-right {
-            opacity: 1;
-            right: 40px;
-            left: auto;
-            transform: translateY(0);
-        }
-
-        @keyframes floaty {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-            }
-            #avatar-genevieve.show-left,
-            #avatar-genevieve.show-right {
-            animation: floaty 4s ease-in-out infinite;
-        }    
+        
         /* === Bouton scroll-to-top === */
         #scrollTopBtn {
         position: fixed;
@@ -788,12 +751,10 @@ pour les p’tits bouts</p>
                 </div>
             </section>
     </main>
-      <img id="avatar-genevieve" src="" alt="Avatar Geneviève"/>
     <!-- === Bouton de retour en haut === -->
     <button id="scrollTopBtn" aria-label="Remonter en haut">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="2" fill="none"/>
-        <path d="M8 13l4-4 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M8 13l4-4 4 4" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
     </button>
       <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -876,68 +837,6 @@ pour les p’tits bouts</p>
         
 
         
-        const avatar = document.getElementById('avatar-genevieve');
-        const sections = document.querySelectorAll('section');
-        let lastIndex = -1;
-
-        // Associe chaque section à son avatar spécifique
-        const avatars = {
-            accueil: 'avatar1.png',
-            formatrice: 'avatar1.png',
-            auteure: 'avatar1.png',
-            conteuse: 'avatar1.png'
-        };
-
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-            const id = entry.target.id;
-            if (entry.isIntersecting && id !== 'accueil') {
-                console.log("HERE");
-                const index = [...sections].indexOf(entry.target);
-                const side = index % 2 === 0 ? 'left' : 'right';
-
-                // Mise à jour de l'image selon la section
-                if (avatars[id]) {
-                    avatar.src = avatars[id];
-                }
-
-                // Transition fluide
-                avatar.classList.remove('show-left', 'show-right');
-                setTimeout(() => avatar.classList.add(`show-${side}`), 100);
-
-                lastIndex = index;
-            } else if (entry.target.id !== 'accueil' && entry.target === sections[lastIndex]) {
-                avatar.classList.remove('show-left', 'show-right');
-            }
-            });
-        }, { threshold: 0.5 });
-
-        sections.forEach(sec => observer.observe(sec));
-        document.addEventListener('DOMContentLoaded', () => {
-            const avatar = document.getElementById('avatar-genevieve');
-            if (!avatar) return;
-
-            // --- CONFIGURATION ---
-            const MOVE_RANGE = 120; // amplitude verticale du mouvement (en px)
-            const SMOOTHNESS = 0.08; // vitesse d’interpolation (0.05 à 0.2 = lent à rapide)
-            let targetY = 0, currentY = 0;
-
-            // fonction appelée à chaque frame pour un défilement fluide
-            function updatePosition() {
-                currentY += (targetY - currentY) * SMOOTHNESS;
-                avatar.style.transform = `translateY(${currentY}px)`;
-                requestAnimationFrame(updatePosition);
-            }
-
-            // mise à jour de la position souhaitée selon le scroll
-            window.addEventListener('scroll', () => {
-                const scrollProgress = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-                targetY = (scrollProgress - 0.5) * MOVE_RANGE * 2; 
-            });
-
-            // lance l’animation
-            requestAnimationFrame(updatePosition);
-        });
     document.addEventListener('DOMContentLoaded', () => {
     const scrollTopBtn = document.getElementById('scrollTopBtn');
 
