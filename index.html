@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <link rel="canonical" href="https://genevieve-bayle-laboure.com/index.html">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Geneviève Bayle-Labouré</title>
@@ -746,7 +747,7 @@
                             <div class="card">
                                 <img src="pts.png" alt="par tous les saints !" class="imgdefault">
                                 <h3>par tous les saints !</h3>
-                                <p>causeries<br>
+                                <p>causerie<br>
                                     sur les traces du légendaire médiéval
                                     des lieux, des saints, des chemins
                                     des images pour une heure de voyage</p>
@@ -754,8 +755,8 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="card">
-                                <img src="01.jpg" alt="Histoire telle qu'elles" class="imgdefault">
-                                <h3>Histoire telle qu'elles</h3>
+                                <img src="01.jpg" alt="Histoires telles qu'elles" class="imgdefault">
+                                <h3>Histoires telles qu'elles</h3>
                                 <p>Madeleine, Hortense, Marguerite, Marinette, Yamira
                                     et celles dont on a oublié le nom.
                                     Toutes portent en elles une part de notre histoire.
@@ -805,8 +806,8 @@ pour écouter les pays traversés.</p>
                                 <img src="07.jpg" alt="jardins" class="imgdefault">
                                 <h3>jardins</h3>
                                 <p>des contes cultivés et récoltés,
-de toutes les couleurs de toutes les senteurs
-contes, farces et nouvelles du jardin.</p>
+                                de toutes les couleurs de toutes les senteurs:
+                                contes, farces et nouvelles du jardin.</p>
                             </div>
                         </div>
                         <div class="swiper-slide">
@@ -860,9 +861,9 @@ pour les p’tits bouts</p>
                                 <div class="card">
                                     <img src="contact.jpg" alt="trait bleu">
                                     <h3>pour me contacter</h3>
-                                    <p></p>
-
-                                    <a href="mailto:genevieve.bl@gmail.com" class="button">eMail</a>
+                                    <p id="email-fallback"></p>
+                                  
+                                    <a href="mailto:genevieve.bl@gmail.com" class="button" id="email-link">eMail</a>
                                 </div>
                             </div>
                            
@@ -977,6 +978,14 @@ pour les p’tits bouts</p>
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
     });
+
+
+        // email
+        // Vérifie si le navigateur bloque le mailto
+        document.getElementById("email-link").addEventListener("click", function (e) {   
+                document.getElementById("email-fallback").innerHTML = "Contact : genevieve.bl@gmail.com";
+        });
+
     </script>
     <!-- === Bouton de retour en haut === -->
 
