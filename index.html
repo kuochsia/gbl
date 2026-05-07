@@ -194,6 +194,7 @@
             /*margin-top: 20px;*/
             background-color: #fff;
             border-bottom: 1px solid #eee;
+            overflow: hidden; /* masque le débordement du peek swiper */
         }
 
         .even-section {
@@ -210,6 +211,7 @@
         .swiper {
             width: 100%;
             height: auto;
+            overflow: visible; /* permet au peek de la carte suivante */
         }
 
         .swiper-slide {
@@ -313,17 +315,6 @@
         transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
-
-        /* Swiper Navigation */
-        .swiper-button-next, .swiper-button-prev {
-            color: #4f79be !important;
-            transition: color 0.3s ease;
-            height: 30px;
-        }
-
-        .swiper-button-next:hover, .swiper-button-prev:hover {
-            color: #4f79be !important;
-        }
 
         .swiper-pagination-bullet {
             background: #c5d1e6;
@@ -681,8 +672,6 @@
                        
                        
                     </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
                     <div class="swiper-pagination"></div>
 
                 </div>
@@ -735,8 +724,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
                     <div class="swiper-pagination"></div>
                 </div>
             </div>
@@ -838,8 +825,6 @@ pour les p’tits bouts</p>
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
                     <div class="swiper-pagination"></div>
                 </div>
             </div>
@@ -911,8 +896,6 @@ pour les p’tits bouts</p>
                             </div>
                            
                         </div>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
                         <div class="swiper-pagination"></div>
                     </div>
 
@@ -945,37 +928,23 @@ pour les p’tits bouts</p>
             const swipers = document.querySelectorAll('.mySwiper');
             swipers.forEach(swiperEl => {
                 new Swiper(swiperEl, {
-                    slidesPerView: 1,
+                    slidesPerView: 1.15,
                     spaceBetween: 15,
-                    loop: false, // Set to true if you want infinite looping
+                    loop: false,
                     pagination: {
-                        el: '.swiper-pagination',
+                        el: swiperEl.querySelector('.swiper-pagination'),
                         clickable: true,
                     },
-                    navigation: {
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev',
-                    },
                     breakpoints: {
-                       
                         768: {
-                            slidesPerView: 2,
+                            slidesPerView: 2.15,
                             spaceBetween: 15,
                         },
                         1024: {
-                            slidesPerView: 3,
+                            slidesPerView: 3.15,
                             spaceBetween: 15,
                         },
                     },
-                    // Optional: Add some subtle animations if desired
-                    on: {
-                        init: function () {
-                            // console.log('swiper initialized');
-                        },
-                        slideChangeTransitionEnd: function () {
-                            // Example: Animate elements within active slide if needed
-                        }
-                    }
                 });
             });
 
